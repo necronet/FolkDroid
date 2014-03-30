@@ -37,12 +37,10 @@ public class EventListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         list = (ListView)view.findViewById(R.id.list);
 
-        Event event = new Event();
-        event.address = "Somewhere around";
-        event.title = "Concert title";
-
         List<Event> events = new ArrayList<Event>();
-        events.add(event);
+        events.add(new Event(1l, "Title 1", "Subtitle 2", null, null));
+        events.add(new Event(2l, "Title 1", "Subtitle 2", null, null));
+        events.add(new Event(3l, "Title 1", "Subtitle 2", null, null));
 
         EventAdapter adapter = new EventAdapter(events);
         list.setAdapter(adapter);

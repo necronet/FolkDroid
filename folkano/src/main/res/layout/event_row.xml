@@ -1,18 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingTop="@dimen/padding_row"
+    android:paddingBottom="@dimen/padding_row"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView" />
+    <ImageView
+        android:layout_width="@dimen/picture_width"
+        android:layout_height="@dimen/picture_height"
+        android:id="@+id/imageEvent"
+        android:src="@drawable/placeholder"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView2" />
-</LinearLayout>
+        android:text="Event Title"
+        android:id="@+id/textEventTitle"
+        android:textAllCaps="true"
+        android:layout_marginLeft="@dimen/item_margin"
+        android:layout_toRightOf="@+id/imageEvent"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/title_text"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/text_gray_normal"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place for event"
+        android:id="@+id/textEventPlace"
+        android:textColor="@color/text_gray_normal"
+        android:layout_below="@+id/textEventTitle"
+        android:textSize="@dimen/subtitle_text"
+        android:layout_alignLeft="@+id/textEventTitle"
+        android:layout_alignStart="@+id/textEventTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/textEventPlace"
+        android:layout_alignLeft="@+id/textEventPlace"
+        android:layout_alignStart="@+id/textEventPlace"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="$30 General"
+            android:textColor="@color/folkano_blue"
+            android:textSize="@dimen/subtitle_text"
+            android:gravity="center_vertical"
+            android:id="@+id/textPrice1"
+            android:layout_below="@+id/textEventPlace"
+            android:layout_alignLeft="@+id/textEventPlace"
+            android:layout_alignStart="@+id/textEventPlace"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/subtitle_text"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textColor="@color/folkano_blue"
+            android:text="$50 VIP"
+            android:id="@+id/textPrice2"
+            android:layout_below="@+id/textEventPlace"
+            android:layout_alignLeft="@+id/textEventPlace"
+            android:layout_alignStart="@+id/textEventPlace"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jueves 20 Mayo, 2:00 pm"
+        android:id="@+id/textView"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_gray_light"
+        android:drawableLeft="@drawable/ic_calendar"
+        android:textSize="@dimen/subtitle_text"
+        android:drawablePadding="8dp"
+        android:layout_alignBottom="@+id/imageEvent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout" />
+
+</RelativeLayout>
