@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="event_type">
+        <item>Today</item>
+        <item>Tomorrow</item>
+        <item>Next Week</item>
+    </array>
+
+</resources>
