@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:parentActivityName="com.folkano.android.FolkanoActivity"
+            android:name="com.folkano.android.EventDetailActivity"
+            android:label="@string/title_activity_event_detail" >
+        </activity>
     </application>
 
 </manifest>

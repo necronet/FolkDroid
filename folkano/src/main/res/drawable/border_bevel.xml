@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- The gray part of the border -->
+    <item>
+        <shape>
+            <solid android:color="@color/text_gray_normal"></solid>
+        </shape>
+    </item>
+    <item android:right="1dip"
+        android:bottom="1dp">
+        <shape>
+            <solid android:color="@color/text_gray_light"></solid>
+        </shape>
+    </item>
+    <!-- The content -->
+    <item android:left="1dip"
+        android:top="1dp"
+        android:right="2dip"
+        android:bottom="2dp">
+        <shape>
+            <solid android:color="@color/white"></solid>
+        </shape>
+    </item>
+</layer-list>

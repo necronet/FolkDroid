@@ -1,10 +1,12 @@
 package com.folkano.android;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
@@ -15,6 +17,8 @@ import java.util.List;
 public class EventListFragment extends Fragment {
 
     ListView list;
+    EventListCallback listener;
+    EventAdapter mAdapter;
 
     public static EventListFragment newInstance(Bundle extras) {
         EventListFragment fragment = new EventListFragment();
@@ -42,8 +46,28 @@ public class EventListFragment extends Fragment {
         events.add(new Event(2l, "Title 1", "Subtitle 2", null, null));
         events.add(new Event(3l, "Title 1", "Subtitle 2", null, null));
 
-        EventAdapter adapter = new EventAdapter(events);
-        list.setAdapter(adapter);
+        mAdapter = new EventAdapter(events);
+        list.setAdapter(mAdapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                getListener().select(mAdapter.getItem(position));
+            }
+        });
+    }
+
+    public EventListCallback getListener() {
+        if (listener == null)
+            listener = (EventListCallback)getActivity();
+
+        return listener;
+    }
+
+
+    @Override
+    public void onPause() {
+        listener = null;
+        super.onPause();
     }
 
     @Override
@@ -85,5 +109,9 @@ public class EventListFragment extends Fragment {
 
             return convertView;
         }
+    }
+
+    public interface EventListCallback {
+        public void select(Event event);
     }
 }

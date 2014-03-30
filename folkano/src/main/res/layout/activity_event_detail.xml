@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.folkano.android.EventDetailActivity">
+
+
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/placeholder"
+        android:minHeight="@dimen/picture_min_detail_height"
+        android:id="@+id/imageView" />
+
+    <TextView
+        android:background="@color/text_gray_normal"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-light"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textSize="@dimen/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:text="Titulo del event"
+        android:id="@+id/textEventTitle"
+        android:layout_gravity="bottom" />
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+
+        android:layout_height="0dp">
+    <TextView
+        android:fontFamily="sans-serif"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:textSize="@dimen/subtitle_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_gray_normal"
+        android:lineSpacingMultiplier="1.3"
+        android:text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit"
+        android:id="@+id/textEventDescription"
+        />
+
+    </LinearLayout>
+
+
+</LinearLayout>

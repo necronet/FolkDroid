@@ -3,5 +3,6 @@
     <color name="text_gray_normal">#464847</color>
     <color name="text_gray_light">#7f7f7f</color>
     <color name="folkano_blue_normal">#40a3cd</color>
+    <color name="folkano_pink_normal">#fe816b</color>
     <color name="white">#ffffff</color>
 </resources>

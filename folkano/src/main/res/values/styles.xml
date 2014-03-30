@@ -3,10 +3,17 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/ActionBar.Solid.Folkano</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/folkano_list_selector_holo_light</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/folkano_activated_background_holo_light</item>
+        <item name="android:listSeparatorTextViewStyle">@style/ListSeparator.Folkano</item>
     </style>
 
     <style name="ActionBar.Solid.Folkano" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@drawable/ab_solid_folkano</item>
+    </style>
+
+    <style name="ListSeparator.Folkano" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@color/folkano_pink_normal</item>
     </style>
 
 </resources>

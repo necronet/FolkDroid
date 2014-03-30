@@ -4,16 +4,15 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.v13.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.widget.ArrayAdapter;
 
 
 
-public class FolkanoActivity extends Activity implements ActionBar.OnNavigationListener{
+public class FolkanoActivity extends Activity implements ActionBar.OnNavigationListener, EventListFragment.EventListCallback {
 
     private ViewPager mPager;
     private EventPagerAdapter mPagerAdapter;
@@ -45,6 +44,12 @@ public class FolkanoActivity extends Activity implements ActionBar.OnNavigationL
         mPagerAdapter = new EventPagerAdapter(getFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
+    }
+
+    @Override
+    public void select(Event event) {
+        Intent intent = new Intent(this, EventDetailActivity.class);
+        startActivity(intent);
     }
 
     private class EventPagerAdapter extends FragmentStatePagerAdapter {

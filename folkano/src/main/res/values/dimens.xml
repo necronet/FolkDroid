@@ -6,6 +6,7 @@
     <dimen name="subtitle_text">16sp</dimen>
     <dimen name="item_margin">24dp</dimen>
     <dimen name="padding_row">8dp</dimen>
+    <dimen name="picture_min_detail_height">150dp</dimen>
     <dimen name="picture_height">100dp</dimen>
     <dimen name="picture_width">100dp</dimen>
     </resources>
