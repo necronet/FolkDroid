@@ -3,14 +3,22 @@ package com.folkano.android;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+
+import android.support.v13.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerTabStrip;
+import android.support.v4.view.ViewPager;
 import android.widget.ArrayAdapter;
-import android.widget.SpinnerAdapter;
+
 
 
 public class FolkanoActivity extends Activity implements ActionBar.OnNavigationListener{
+
+    private ViewPager mPager;
+    private EventPagerAdapter mPagerAdapter;
+    private static final String[] titles = { "Todos los eventos", "Concierto", "Deportes", "Danza", "Taller" };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +40,32 @@ public class FolkanoActivity extends Activity implements ActionBar.OnNavigationL
 
         setContentView(R.layout.activity_folkano);
 
+        // Instantiate a ViewPager and a PagerAdapter.
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPagerAdapter = new EventPagerAdapter(getFragmentManager());
+        mPager.setAdapter(mPagerAdapter);
 
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.fragment_content);
+    }
 
-        if (fragment == null) {
-            fragment = EventListFragment.newInstance(null);
-            getFragmentManager().beginTransaction().add(R.id.fragment_content, fragment, "content").commit();
-        } 
+    private class EventPagerAdapter extends FragmentStatePagerAdapter {
+        public EventPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
 
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position].toUpperCase();
+        }
 
+        @Override
+        public Fragment getItem(int position) {
+            return EventListFragment.newInstance(null);
+        }
+
+        @Override
+        public int getCount() {
+            return titles.length;
+        }
     }
 
 
